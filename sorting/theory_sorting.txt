@@ -1,0 +1,14 @@
+Hybrid Sorting algorithms :
+
+TimSort (in python)
+-------------------
+uses merge and insertion sort. switches to insertion sort when
+array becomes small
+
+IntroSort
+---------
+uses heap,quick,insertion sort. switches to insertion sort when
+array becomes small
+
+-> Merge sort used in many standard library implementations
+-> Java 8 uses merge and quick sort depending on the input type

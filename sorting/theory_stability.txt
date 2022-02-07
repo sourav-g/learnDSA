@@ -1,0 +1,27 @@
+/*important criteria for analysing algorithms
+want to know which is STABLE and which is NOT*/
+
+//alphabetically sorted already
+String[] arr = [('Anil',50),
+                ('Ayan',80),
+                ('Piyush',50),
+                ('Ramesh',80)];
+
+//now sort in ascending order of marks
+//STABILITY --> If 2 items have same value, they should appear
+//in the same order as they appear in the original array
+//Stability is important/useful only in case of array of objects
+
+//original
+[('Anil',50),('Ayan',80),('Piyush',50),('Ramesh',80)];
+
+//using STABLE sorting algo (ensures original order if same value)
+//BUBBLE, INSERTION, MERGE SORT
+[('Anil',50),('Piyush',50),('Ayan',80),('Ramesh',80)]
+
+//using UNSTABLE algo (order may or maynot be same, it does not care)
+//SELECTION, QUICK, HEAP SORT
+[('Piyush',50),('Anil',50),('Ayan',80),('Ramesh',80)]
+
+
+
