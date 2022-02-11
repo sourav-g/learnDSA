@@ -15,8 +15,8 @@ let sum = 4;
 //?         k = prefixSum  v=index    
 //* prefixSum - sum => -2,-1,-1,0,8,10,13,19,24 <- i
 
-//~ TC = 
-//~ SC = 
+//~ TC = O(n)
+//~ SC = O(n)
 console.log(getLengthOfLongestSubArray(arr));
 function getLengthOfLongestSubArray(arr){
     let prefixSum = 0;
