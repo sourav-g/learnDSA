@@ -1,7 +1,6 @@
-let arr = [8,3,1,5,-6,6,2,2];
+let arr = [8,3,1,5,-6,6,2,2];  //<- i
 let sum = 4;
 
-//* prefixSum set   => {3,4,4,5,13,15,18,24,29} <- i
 //* prefixSum map   => (3,0)
 //                     (4,1) (4,2) <- ignore, since earlier entry will
 //                     (5,3)          ensure longer subarray with same sum.

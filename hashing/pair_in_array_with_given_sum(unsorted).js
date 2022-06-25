@@ -1,8 +1,8 @@
 let arr = [3,2,8,15,-8];   //? [n*(n-1)]/2 possible pairs //n=5
 const sum = 17;
 
-//*Approch 1 : Using hashing
-//TC = O(n)
+//*Approach 1 : Using hashing
+//TC = O(n)s
 //SC = O(n)
 console.log(isPairPresent(arr));
 function isPairPresent(arr){
