@@ -17,6 +17,7 @@ let sum = 4;
 //~ TC = O(n)
 //~ SC = O(n)
 console.log(getLengthOfLongestSubArray(arr));
+
 function getLengthOfLongestSubArray(arr){
     let prefixSum = 0;
     let map = new Map();

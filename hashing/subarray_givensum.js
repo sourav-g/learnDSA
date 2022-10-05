@@ -1,5 +1,5 @@
 let arr = [1,7,13,2,7,5];
-let sum = 21;
+let sum = 15;
 
 //?Sub Array is contiguos, else its a subsequence
 //*No of subarrays => (n+1)+ n(n-1)/2 => 22 (for n=6) 

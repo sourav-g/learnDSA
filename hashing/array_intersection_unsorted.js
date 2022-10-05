@@ -5,7 +5,7 @@ let b = [20,10,10,40];     //--> n
 //* TC = Theta(m+n)
 //* SC = O(m+n)
 let arrayIntersection = function(a,b){
-    const set_a = new Set();
+    const set_a = new Set();            //To remove duplicates, use Set 
     const set_b = new Set();
     for(let i=0; i<a.length; i++){      //O(m)
         set_a.add(a[i]);
