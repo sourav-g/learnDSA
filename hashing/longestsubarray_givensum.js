@@ -1,18 +1,18 @@
-let arr = [8,3,1,5,-6,6,2,2];  //<- i
-let sum = 4;
+let arr = [8,3,0,5,-6,6,2,2];  //<- i
+let sum = 10;
 
-//* prefixSum map   => (3,0)
-//                     (4,1) (4,2) <- ignore, since earlier entry will
-//                     (5,3)          ensure longer subarray with same sum.
-//                     (13,4)
-//                     (15,5)
-//                     (18,6)
-//                     (24,7)         
-//                     (29,8) 
+//* prefixSum map   => (8,0)
+//                     (11,1) 
+//                     (11,2) <- ignore, since earlier entry will
+//                     (16,3)    ensure longer subarray with same sum.
+//                     (10,4)
+//                     (16,5) <- ignore
+//                     (18,6) 
+//                     (20,7)
 //?                     ^  ^
 //?                     |  |
 //?         k = prefixSum  v=index    
-//* prefixSum - sum => -2,-1,-1,0,8,10,13,19,24 <- i
+//* prefixSum - sum => -2,1,1,6,0,6,8,10 
 
 //~ TC = O(n)
 //~ SC = O(n)
@@ -25,6 +25,7 @@ function getLengthOfLongestSubArray(arr){
     for(let i=0; i < arr.length; i++){
         prefixSum += arr[i];
         if(prefixSum == sum) maxLength = i+1;
+        //console.log(prefixSum-sum);
         if(map.has(prefixSum-sum)){
            let len = i-map.get(prefixSum-sum);
            if(len > maxLength){

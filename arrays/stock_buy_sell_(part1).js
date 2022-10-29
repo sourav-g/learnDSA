@@ -5,7 +5,7 @@ findMaxPriceDifference(prices);
 function maximumProfit(prices){
 
     for(let i=0; i<n; i++){
-
+        
     }
 }
 
