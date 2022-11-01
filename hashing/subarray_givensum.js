@@ -15,9 +15,10 @@ function isGivenSumSubArray(arr){
         prefixSum += arr[i];
         if(prefixSum==sum) return true; //of subarray starts from 0 case
         set.add(prefixSum);
+        console.log(prefixSum);
     }
     
-    //prefixsum => 1,5,18,20,27,32
+    //prefixsum => 1,8,21,23,30,35
 
     for(let value of set){
         if(set.has(value+sum)){ //O(1) considering good hashing fn.
