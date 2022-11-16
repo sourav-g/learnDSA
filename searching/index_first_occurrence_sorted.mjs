@@ -1,11 +1,16 @@
 let a = [1,10,10,10,20,20,30];
 const n = a.length;
 
-console.log(findFirstOccurrence(a,30));
+let x = 20; //input
+
+let t1 = performance.now();
+console.log(findFirstOccurrence(a,x));
+let t2 = performance.now();
+console.log(`Took ${(t2-t1).toFixed(4)} ms`);
 
 //* TC => O(log n)
 //* SC => O(1)
-function findFirstOccurrence(a,x){
+export function findFirstOccurrence(a,x){
     let low = 0;
     let high = n-1;
     let firstOccurIndex = n;
@@ -14,9 +19,13 @@ function findFirstOccurrence(a,x){
     while(low<=high){
         const mid = Math.floor((low+high)/2);
         if(a[mid] == x){
-            currentOccurIndex = mid;
+            //~ This comparison is not required, since SORTED
+            /*currentOccurIndex = mid;
             if(currentOccurIndex < firstOccurIndex){
                 firstOccurIndex = currentOccurIndex;
+            }*/
+            if(mid == 0 || a[mid-1] != a[mid]){
+                return mid;
             }
             high = mid-1;
         }else if(x < a[mid]){
@@ -28,7 +37,11 @@ function findFirstOccurrence(a,x){
     return firstOccurIndex == n ? -1 : firstOccurIndex;
 }
 
-console.log(firstFirstOccurrence_Rec(a,30,0,n-1,n,n));
+
+t1 = performance.now();
+console.log(firstFirstOccurrence_Rec(a,x,0,n-1,n,n));
+t2 = performance.now();
+console.log(`Took ${(t2-t1).toFixed(4)} ms`);
 
 //* TC => O(log n)
 //* SC => O(log n)
@@ -38,9 +51,13 @@ function firstFirstOccurrence_Rec(a,x,low,high,currentIndex,firstIndex){
     }
     const mid = Math.floor((low+high)/2);
     if(a[mid] == x){
-        currentIndex = mid;
+        //~ This comparison is not required, since SORTED
+        /*currentIndex = mid;
         if(currentIndex < firstIndex){
             firstIndex = currentIndex;
+        }*/
+        if(mid == 0 || a[mid-1] != a[mid]){
+            return mid;
         }
         return firstFirstOccurrence_Rec(a,x,low,mid-1,currentIndex,firstIndex);
     }else if(x < a[mid]){

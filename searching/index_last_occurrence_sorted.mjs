@@ -1,11 +1,13 @@
 let a = [1,10,10,20,20,20,30];
 const n = a.length;
 
-console.log(findLastOccurrence(a,20));
+let x = 10;
+
+console.log(findLastOccurrence(a,x));
 
 //* TC => O(log n)
 //* SC => O(1)
-function findLastOccurrence(a,x){
+export function findLastOccurrence(a,x){
     let low = 0;
     let high = n-1;
     let lastOccurIndex = -1;
@@ -14,9 +16,13 @@ function findLastOccurrence(a,x){
     while(low<=high){
         let mid = Math.floor((low+high)/2);
         if(a[mid] == x){
-            currentOccurIndex = mid;
+            //~ This comparison is not required, since SORTED
+            /*currentOccurIndex = mid;
             if(currentOccurIndex > lastOccurIndex){
                 lastOccurIndex = currentOccurIndex;
+            }*/
+            if(mid == n-1 || a[mid+1] != a[mid]){
+                return mid;
             }
             low = mid+1;
         }else if(x < a[mid]){
@@ -29,7 +35,7 @@ function findLastOccurrence(a,x){
 }
 
 
-console.log(firstLastOccurrence_Rec(a,20,0,n-1,-1,-1));
+console.log(firstLastOccurrence_Rec(a,x,0,n-1,-1,-1));
 
 //* TC => O(log n)
 //* SC => O(log n)
